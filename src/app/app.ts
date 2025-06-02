@@ -10,8 +10,13 @@ import { ApiService } from '../services/api.service';
 })
 export class App implements OnInit {
   private api = inject(ApiService)
+  private data:any[] = [];
   ngOnInit(): void {
    this.api.getData();
+
+   this.api.$data.subscribe((x) => {
+    this.data = x;
+   });
   }
   protected title = 'CityClim';
 
