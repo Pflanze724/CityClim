@@ -1,24 +1,12 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ApiService } from '../services/api.service';
+import { Component } from '@angular/core';
+import { Temp } from './temp/temp';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Temp],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App implements OnInit {
-  private api = inject(ApiService)
-  private data:any[] = [];
-  ngOnInit(): void {
-   this.api.getData();
-
-   this.api.$data.subscribe((x) => {
-    this.data = x;
-   });
-  }
-  protected title = 'CityClim';
-
-
+export class App {
+ 
 }

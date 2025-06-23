@@ -1,0 +1,10 @@
+@for (item of newTemps; track item.id) {
+  <div class="reading">
+    <p><strong>ID:</strong> {{ item.id }}</p>
+    <p><strong>Temperatur:</strong> {{ item.data.temperature }} °C</p>
+    <p><strong>Luftfeuchtigkeit:</strong> {{ item.data.humidity }} %</p>
+    <hr />
+  </div>
+}
+
+
